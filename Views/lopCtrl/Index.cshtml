@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Mong.Models.LopMo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Quản lý lớp học</h1>
+
+<p>
+    <a asp-action="Create">Tạo mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID 
+            </th>
+            <th>
+                Tên lớp học
+            </th>
+            <th>
+                Lầu học
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lau)
+            </td>
+            <td>
+                @Html.ActionLink("Chỉnh sửa", "Edit", new {  id=item.Id  }) |
+                    @Html.ActionLink("Chi tiết", "Details", new { id=item.Id }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

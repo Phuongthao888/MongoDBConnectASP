@@ -1,0 +1,36 @@
+﻿@model Mong.Models.LopMo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3>Thông tin của lớp học</h3>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            ID
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            Tên lớp học
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            Lầu học
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Lau)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Chỉnh sửa", "Edit", new {  id = Model.Id  }) |
+    @Html.ActionLink("Xóa", "Delete", new {  id = Model.Id  }) |
+    <a asp-action="Index">Quay lại</a>
+</div>

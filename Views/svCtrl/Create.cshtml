@@ -1,0 +1,50 @@
+﻿@model Mong.Models.svMo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h3>Điền thông tin sinh viên cần thêm !</h3>
+
+<h3>@ViewBag.Mgs</h3>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @* <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Tên sinh viên</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="address" class="control-label">Địa chỉ tạm trú</label>
+                <input asp-for="address" class="form-control" />
+                <span asp-validation-for="address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="gmail" class="control-label">Gmail</label>
+                <input asp-for="gmail" class="form-control" />
+                <span asp-validation-for="gmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sdt" class="control-label">Số điện thoại</label>
+                <input asp-for="sdt" class="form-control" />
+                <span asp-validation-for="sdt" class="text-danger"></span>
+            </div><br />
+            <div class="form-group">
+                <input type="submit" value="Tạo" class="btn btn-primary" /> |
+                <a asp-action="Index">Quay lại</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
